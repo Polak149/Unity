@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\scripts\wings effect.js">
+    <Files>
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSFlyer.js" Line="103" Column="32" />
+      <File FileName="Assets\Standard Assets\Character Controllers\scripts\LimbsGoesAfterCamera.js" Line="13" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\scripts\smoothLookAtForward.js" Line="20" Column="57" />
+      <File FileName="Assets\Standard Assets\LavaPackage\Lava3\Sources\Scripts\LavaTrigger.js" Line="104" Column="26" />
+      <File FileName="Assets\Standard Assets\LavaPackage\Lava3\Sources\Scripts\lavaUnderwaterFree.js" Line="6" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\scripts\character animation controll.js" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\SpecjalBehaviour.js" Line="8" Column="33" />
+      <File FileName="Assets\Standard Assets\Character Controllers\scripts\wings effect.js" Line="57" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

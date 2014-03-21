@@ -1,0 +1,70 @@
+Diff Maps are used by the MetaMorph engine for Unity3d.  They allow Shapekeys to be exported to Unity3d and used to animate shapechanges in a mesh.
+MetaMorph can be used in additon (and at the same time as) bones in unity, allowing the most detailed animation in Unity to date.
+
+Examples of use:
+Facial animation and speech mouth morphs (even with a jaw-bone)
+Having one main humanoid mesh, and using shapekeys to change it from male, female, and neuter versions.
+Using it for complex mesh animations, such as melting, exploding, and the like.
+
+
+************************* NOTICE: *************************
+This is not a training course on how to use Blender 3d.  
+I am NOT going to explain how to do things in blender, 
+just how to use this plugin.  
+If you need Blender help, try reading the documentation,
+using google, watching some of the training vids at
+http://www.blendercookie.com, or asking for help at the
+BlenderArtist forums at http://blenderartists.org/forum/
+************************* NOTICE: *************************
+
+About DiffMaps and UV layers/unwrapping:
+Diffmaps store data like normal maps, that means that overlapping faces/uvs disrupt the data stored on them and will lead to distortions of the diffmap.
+Verts on the UV later need to be fare enough apart that they can store color(position) data in the pixel they are over, without another pixel disruping it.
+If you model has to have overlapping uvs for the texture work, then use the second UV layer for the diff-map and make a unique unwrap of the mesh.
+Unity3d can ONLY use TWO UV layers.  
+
+
+Install blender 2.5
+Drop the "io_export_diffmap.py" into your addons directory
+Activate the plugin in the Add-Ons menu under Import-Export
+
+
+Select the Mesh you want to export ShapeKeys from
+In the Properties window, select the Object Data tab
+You will find the Diff-Map Exporter
+
+
+You have the following settings:
+File path:  This is where all the files will be exported.  
+Name:  This is the prefix for the name of all files exported.  They will have other information appended aftter it.
+Width:  The Diff-Map texture Width.  Depending on your mesh complexity, make this as small as possible to reduce filesize.
+Height:  The Diff-Map texture Width.  Depending on your mesh complexity, make this as small as possible to reduce filesize.
+Edge Margin:  When baking texture onto a UV mesh, you can choose how far out the margins along the UV edges spread.
+UV Texture Layer Selection:  You can have more than one UV layer, and sometimes, you may want to use a special UV layer for Diff-Maps than for texturing.  Since you can't have overlapping UV mappings in a mesh that uses a diffmap, you might make uv layer one your texture layer, and UV layer two your Diffmap layer.  This is something like having a layer for textures and a layer for lightmaps.
+Export ShapeKeys:  Checking this allows you to export the diffmaps as TGA images. 
+Export Animations:  Checking this exports the animation text file. 
+Export Diff v.x.x.x: Click this to export the data into the folder you have selected.
+
+
+All of the ShapeKeys will be output as TGA textures, with the filename [Name]-[ShapeKey name].TGA
+The TGA files are Diff Maps.  Like Normal Maps, these textures store data in their RGB colors.
+
+The data stored is the normalized xyz shift of each vert into a RGB color.
+Red Channel 0-255 = -1 to 1 x shift.  This makes 128 = 0 shift.
+Green Channel 0-255 = -1 to 1 y shift.
+Blue Channel 0-255 = -1 to 1 z shift.
+
+
+Animations are saved as [Name]-[startframe]to[endframe]-DiffMapAnimation.TXT
+This is a text file much like a BVH animation file, except for storing ShapeKey animation data.
+Is is an export of all the ShapeKey values for each frame from your timeline Start to End values.
+If you want to export more than one animation, checkbox the "Animation Only" option in the exporter to prevent exporting all the textures again.
+
+
+These files are usable MetaMorph for Unity 3D, allowing game use of ShapeKeys in your Unity games.
+
+
+MetaMorph is a Mesh shape API for game designers.  It allows ShapeKey animation work a direct pipeline into Unity, putting mesh animation fully into the hands of the animators, but allowing programmers detailed control over how to use it.
+
+
+All sourcecode for the exporter and Importers are included with the attached MetaMorph Animation Kit, so please feel free to examine it for a better idea of DiffMap and DiffMap animation file format.

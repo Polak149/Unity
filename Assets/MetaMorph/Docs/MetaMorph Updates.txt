@@ -1,0 +1,19 @@
+Updates (1.1.1):
+- Blender Diff Map exporter plugin:
+    - Bugfixes:
+        - Fixed issues with new version of Blender not working with exporter.
+    - Feature Upgrades:
+        - "Diff Map Animation Exporter.py" renamed to "io_export_diffmap.py"
+        - Exporter now listed as "Export MetaMorph Diff Map Animation" in plugins.
+        - Exporter now listed in Export under File when installed.
+        - Name now defaults to the name of the Object that has Shapekeys being exported.
+        - You can choose to export Shapekeys or Animations with checkboxes.
+        - Animation text files now have the animation names match the names of the TGA files being exported.  
+            (This was done to accomidate MetaMorph upgrades in this version.)
+
+- MetaMorph script:
+    - Feature Upgrades:
+        - Some entries for MetaMorph in Inspector under DiffMap are autofilled if left blank or zero.  This allows easier setup.
+            - If the DM_Multiplier is zero, then it is loaded from any available animation text file.
+            - If the DM_Scale is 0,0,0, then it will be set to 1,1,1 upon loading.
+            - If the Diff_Map Name is blank, then it is set from the filename (Without the .tga)

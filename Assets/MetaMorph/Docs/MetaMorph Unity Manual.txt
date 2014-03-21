@@ -1,0 +1,118 @@
+Diff Maps are used by the MetaMorph engine for Unity3d.  They allow Shapekeys to be exported to Unity3d and used to animate shapechanges in a mesh.
+MetaMorph can be used in additon (and at the same time as) bones in unity, allowing the most detailed animation in Unity to date.
+
+Examples of use:
+Facial animation and speech mouth morphs (even with a jaw-bone)
+Having one main humanoid mesh, and using shapekeys to change it from male, female, and neuter versions.
+Using it for complex mesh animations, such as melting, exploding, and the like.
+
+
+************************* NOTICE: *************************
+This is not a training course on how to use Unity 3d.  
+I am NOT going to explain how to do things in Unity, 
+just how to use this API.  
+If you need Unity help, try reading the documentation,
+using google, or asking for help at the Unity
+forums at http://unity3d.com/
+************************* NOTICE: *************************
+
+First, see "PlayMoon DEMO.js" for examples on use.
+
+----------------------------------------------------------------------
+Morph Functions:
+----------------------------------------------------------------------
+
+function mm_Morph_Add( Morph_Name : String, Start_Level : float, End_Level : float, TimeFrame : float )
+{
+	// Morph_Name: this is the name of the morph, as designated in Diff_Maps.Name
+	// Start_Level: sets the starting morph level.  normally, you would use zero to start
+	// End_Level: The morph level you want to end up at.
+	// TimeFrame: How long to take to fade from start to end.
+	
+	// Keep in mind, even when the morph has finished timeframe, it's still morphing the mesh every frame until stopped by mm_Morph_Remove.
+	// If you want to have a morph be added 'permanenty' to the mesh, use mm_SetShape_Set.
+	// These work with mm_Animate_Play, allowing you to use morphs while animations are running.
+	// This is good for things like randomized blinking, for example.
+	
+	// morph effects are additive, meaning that two morphs with overlapping effects do not average, they add to each other.
+}
+
+function mm_Morph_Remove(Morph_Name : String, TimeFrame : float)
+{
+	// Morph_Name: this is the name of the morph to stop effecting the mesh.
+	// TimeFrame: is how long it takes for the morph to fade out.
+}
+
+function mm_Morph_Level( Morph_Name : String ) : Array // [float]
+{
+	// Morph_Name: this is the name of the morph you are questing information on.
+	// If the returned array is null, then the morph is not active.  Otherwise, array[0] is a float of how much the morph is effecting the mesh.
+}
+
+function mm_Morph_Playing(  ) : Array // strings
+{
+	// Morph_Name: this is the name of the morph you are questing information on.
+	
+	// returns an array of all the morphs (not animations or Setshapes) effecting the mesh. 
+}
+
+----------------------------------------------------------------------
+Animation Functions:
+----------------------------------------------------------------------
+
+function mm_Animate_Play( Morph_Animation_Name : String, Speed_Multiple : float, Style : int )
+{
+	// Morph_Animation_Name: The name of the animation you are starting from Animation_Recordings.Name
+	// Speed_Multiple: This allows you to speed up and slow down an animation.  1.0 is normal.  Higher is faster.  Lower is slower.
+	// Style: Animation_Style_End = 0, Animation_Style_Freeze = 1, Animation_Style_Loop 2, Animation_Style_PingPong = 3
+	
+	// These are NOT morphs, though they use Morph data.  They are datastreams of morph levels stored by frame.
+	// They are use to play back complex animation from Blender 3d made with shapekeys.
+	
+	// Starts playing an animation.
+}
+
+function mm_Animate_Stop( Morph_Animation_Name : String, Ease_Out : float )
+{
+	// Morph_Animation_Name: Name of the animation to stop.
+	// Ease_Out: How long to take easing out of the animation running.
+
+	// stops an animation by fading it out.  To fade it out instantly, use and ease_out of zero.
+}
+
+function mm_Animate_Frame( Morph_Animation_Name : String ) : Array // [int]
+{	
+	// Morph_Animation_Name: Name of the animation to get the current frame from.
+	// returns the current frame of the animation.
+	
+	// returns the current frame being played of the named animation.
+}
+
+// gives a list of the names of currently playing animations.
+function mm_Animate_Playing( ) : Array // strings
+{
+	// returns a list of the names of currently playing animations.
+}
+
+----------------------------------------------------------------------
+SetShape Functions
+----------------------------------------------------------------------
+
+function mm_SetShape_Set(	Morph_Name : String, Morph_Level : float )
+{
+	// Morph_Name: Name of the morph to apply.
+	// Morph_Level: How much to apply it. 1.0 is fully.
+
+	// With this, you can set a morph shape into the default mesh.
+	// This means no FPS cost for it to be visible, but a large cost to set it.
+	// Do NOT call this per frame.  Use the mm_Morph set of functions to animate getting to a shape, and then kill the morph while setting the shape.
+	// It stacks, so each new shape added is added to all the previous ones.
+}
+
+function mm_SetShape_Reset( )
+{
+
+	// This function resets the modded mesh back to the default.
+	// Again, this is for SetShape, and does not effect morphs or animations.
+}
+

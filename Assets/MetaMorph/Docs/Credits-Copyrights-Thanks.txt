@@ -1,0 +1,47 @@
+All concepts dealing with the DiffMap development and MetaMorph design are
+Copyright (c) 2010, Foolish Frost (aka John Bowden)
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the names of Foolish Frost or Rezzable nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL Foolish Frost (aka John Bowden) BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The MetaMorph Animation Kit was designed and created by Foolish Frost (aka John Bowden).  
+This code is licenced under the 3-clause license ("New BSD License" or "Modified BSD License")
+(For more infomation, look at http://en.wikipedia.org/wiki/BSD_licenses)
+
+The Author can be contacted at FoolishFrost@gmail.com.  
+I am usually found to be quite friendly, and only rarely have been known to gank people in Warcraft.
+Please don't hesitate to contact me for questions on items not found in the manuals or code.
+
+The following people helped in the creation of this kit:
+Ivo Grigull (monkeyloo@gmx.net) helped code the Blender 3d exporter for Diff Maps.  His webpage can be found at http://ivogrigull.com/
+Jon Himoff of Rezzable.com is my employer, and was kind enough to let this project go public domain.
+Ordinal, LittleToe, and Pavig:  thanks for your thoughts on the API and features.  It actually has most of them!
+Botany Black (Rebecca Bowden), for feeding and watering me when I was in a coding trance and not letting me just fade away.
+Ton Roosendaal of Blender fame.  Thanks for the first, and BEST tool I've ever used on a computer.  You rock, dude.
+Caitlyn Meeks of Unity3d.  Thanks for your thoughts and comments!
+The programming team at Unity3d.  You know, builtin arrays in javascript?  I like those.  Here you go.  Have Morph shapes back in exchange!
+Jonathan Coulton for the song "I'm Your Moon".  Nice work, dude!
+
+The use of "I'm Your Moon", by Jonathan Coulton is under the 'Creative Commons by-nc' licence.
+http://creativecommons.org/licenses/by-nc/3.0/
+Note the song is a part of the demo, but NOT a part of MetaMorph.  
